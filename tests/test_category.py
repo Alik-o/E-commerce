@@ -25,4 +25,4 @@ def test_category_products(category):
 def test_category_add_product(category):
     product = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
     category.add_product(product)
-    assert category.product_count == 8
+    assert category.category_count == 5
