@@ -12,8 +12,8 @@ def test_category_init(category, category_2):
         category_2.description
         == "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником"
     )
-    assert category._product_count == 3
-    assert category._category_count == 2
+    assert category.product_count == 3
+    assert category.category_count == 2
 
 
 def test_category_products(category):
@@ -25,4 +25,4 @@ def test_category_products(category):
 def test_category_add_product(category):
     product = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
     category.add_product(product)
-    assert category._product_count == 3
+    assert category.product_count == 8
