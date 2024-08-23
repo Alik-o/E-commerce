@@ -21,3 +21,11 @@ def test_product_new_product(products):
     assert new_product.description == "256GB, Серый цвет, 200MP камера"
     assert new_product.price == 180000.0
     assert new_product.quantity == 5
+
+def test_product_price(products):
+    products.price = 800
+    assert products.price == 800
+    products.price = -100
+    assert products.price == 800
+    products.price = 0
+    assert products.price == 800
