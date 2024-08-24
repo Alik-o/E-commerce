@@ -1,5 +1,5 @@
-from src.product import Product
 from src.category import Category
+from src.product import Product
 
 
 def test_category_init(category, category_2):
@@ -33,7 +33,7 @@ def test_category_str(products):
     category = Category(
         name="Смартфоны",
         description="Смартфоны, как средство не только коммуникации, "
-                    "но и получения дополнительных функций для удобства жизни",
+        "но и получения дополнительных функций для удобства жизни",
         products=[products, Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)],
     )
 

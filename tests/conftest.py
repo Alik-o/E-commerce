@@ -10,11 +10,11 @@ def products():
         name="Samsung Galaxy S23 Ultra", description="256GB, Серый цвет, 200MP камера", price=180000.0, quantity=5
     )
 
+
 @pytest.fixture
 def products_1():
-    return Product(
-        name="Iphone 15, description=", description="512GB, Gray space", price=210000.0, quantity=8
-    )
+    return Product(name="Iphone 15, description=", description="512GB, Gray space", price=210000.0, quantity=8)
+
 
 @pytest.fixture
 def category(products):
