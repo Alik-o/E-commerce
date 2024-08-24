@@ -11,7 +11,7 @@ def products():
     )
 
 
-@pytest.fixture
+@pytest.fixture(scope="function", autouse=True)
 def category(products):
     return Category(
         name="Смартфоны",

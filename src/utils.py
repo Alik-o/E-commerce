@@ -22,6 +22,3 @@ def create_object_from_json(data: list) -> list:
         result.append(Category(category["name"], category["description"], products))
 
     return result
-
-
-print(load_json("products.json"))
