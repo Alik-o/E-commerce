@@ -1,4 +1,5 @@
 from src.product import Product
+from src.category import Category
 
 
 def test_category_init(category, category_2):
@@ -25,4 +26,15 @@ def test_category_products(category):
 def test_category_add_product(category):
     product = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
     category.add_product(product)
-    assert category.category_count == 5
+    assert category.product_count == 8
+
+
+def test_category_str(products):
+    category = Category(
+        name="Смартфоны",
+        description="Смартфоны, как средство не только коммуникации, "
+                    "но и получения дополнительных функций для удобства жизни",
+        products=[products, Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)],
+    )
+
+    assert str(category) == "Смартфоны, количество продуктов: 19\n"
