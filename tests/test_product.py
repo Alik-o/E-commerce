@@ -22,6 +22,7 @@ def test_product_new_product(products):
     assert new_product.price == 180000.0
     assert new_product.quantity == 5
 
+
 def test_product_price(products):
     products.price = 800
     assert products.price == 800
@@ -29,3 +30,11 @@ def test_product_price(products):
     assert products.price == 800
     products.price = 0
     assert products.price == 800
+
+
+def test_product_str(products):
+    assert str(products) == "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5\n"
+
+
+def test_product_add(products, products_1):
+    assert products + products_1 == 2580000.0

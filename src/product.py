@@ -10,6 +10,12 @@ class Product:
         self.__price = price
         self.quantity = quantity
 
+    def __str__(self):
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity}\n"
+
+    def __add__(self, other):
+        return self.price * self.quantity + other.price * other.quantity
+
     @classmethod
     def new_product(cls, data):
         return cls(**data)
@@ -21,6 +27,6 @@ class Product:
     @price.setter
     def price(self, value):
         if value <= 0:
-            return "Цена не может быть меньше или равна нулю"
+            print("Цена не может быть меньше или равна нулю")
         else:
             self.__price = value
