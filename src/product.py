@@ -4,11 +4,12 @@ class Product:
     __price: float
     quantity: int
 
-    def __init__(self, name, description, price, quantity):
+    def __init__(self, name, description, price, quantity, color=None):
         self.name = name
         self.description = description
         self.__price = price
         self.quantity = quantity
+        self.color = color
 
     def __str__(self):
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity}\n"
