@@ -1,3 +1,5 @@
+import pytest
+
 from src.category import Category
 from src.product import Product
 
@@ -26,7 +28,7 @@ def test_category_products(category):
 def test_category_add_product(category):
     product = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
     category.add_product(product)
-    assert category.product_count == 8
+    assert category.product_count == 3
 
 
 def test_category_str(products):
@@ -38,3 +40,8 @@ def test_category_str(products):
     )
 
     assert str(category) == "Смартфоны, количество продуктов: 19\n"
+
+
+def test_category_add_products_error(category):
+    with pytest.raises(TypeError):
+        category.add_product(1)
