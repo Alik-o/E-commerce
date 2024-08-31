@@ -45,3 +45,12 @@ def test_category_str(products):
 def test_category_add_products_error(category):
     with pytest.raises(TypeError):
         category.add_product(1)
+
+
+def test_category_middle_price(category):
+    assert category.middle_price() == 105500.0
+
+
+def test_category_products_empty():
+    category_empty = Category("Пустая категория", "Категория без продуктов", [])
+    assert category_empty.middle_price() == 0
