@@ -1,3 +1,5 @@
+import pytest
+
 from src.product import Product
 
 
@@ -38,3 +40,8 @@ def test_product_str(products):
 
 def test_product_add(products, products_1):
     assert products + products_1 == 2580000.0
+
+
+def test_product_quantity_zero():
+    with pytest.raises(ValueError):
+        Product("Бракованный товар", "Неверное количество", 1000.0, 0)
